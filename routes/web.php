@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/takeout', 'RegisterController@index')->name('takeout');
+Route::get('/takeout/mypage', 'RegisterController@mypage')->name('takeout.mypage');
+Route::get('/takeout/edit', 'RegisterController@edit')->name('takeout.edit');
+Route::get('/takeout/new', 'RegisterController@new')->name('takeout.new');
+Route::get('/takeout/detail', 'RegisterController@detail')->name('takeout.detail');
