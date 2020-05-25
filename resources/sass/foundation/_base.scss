@@ -1,0 +1,27 @@
+/* ---------------------------------
+base
+--------------------------------- */
+
+body,
+html {
+  width: 100%;
+  color: #707070;
+  font-size: 62.5%; //10px
+  //   font-family: ;
+  line-height: 1.6;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+  //カウンターリセット
+  //   counter-reset: my-counter;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+// フッター下部固定
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}

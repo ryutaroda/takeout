@@ -12,14 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('takeout.index');
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+// 店舗一覧ページ（どちらも）
 Route::get('/takeout', 'RegisterController@index')->name('takeout');
+// マイページ（店舗側）
 Route::get('/takeout/mypage', 'RegisterController@mypage')->name('takeout.mypage');
+// 店舗情報編集ページ（店舗側）
 Route::get('/takeout/edit', 'RegisterController@edit')->name('takeout.edit');
+// メニュー追加ページ（店舗側）
 Route::get('/takeout/new', 'RegisterController@new')->name('takeout.new');
+// 店舗詳細ページ（閲覧者用）
 Route::get('/takeout/detail', 'RegisterController@detail')->name('takeout.detail');

@@ -1,0 +1,41 @@
+/* ---------------------------------
+header
+--------------------------------- */
+.p-header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__title {
+    margin-left: 100px;
+    font-size: 25px;
+  }
+  &__nav {
+    &-list {
+      overflow: hidden;
+      margin-right: 100px;
+    }
+    &-item {
+      float: left;
+      height: 34px;
+      margin-left: 18px;
+      padding: 10px 12px;
+      font-size: 14px;
+      border: none;
+
+      &__regist {
+        background: #fdb487;
+
+        a {
+          color: white;
+        }
+      }
+      &__login {
+        background: #a2c8f4;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}

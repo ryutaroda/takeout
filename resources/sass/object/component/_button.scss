@@ -1,0 +1,12 @@
+/* ---------------------------------
+button
+--------------------------------- */
+.c-button {
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 12px 15px;
+  &:hover {
+  }
+}
