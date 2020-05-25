@@ -41,14 +41,16 @@
                         <li class="c-button p-header__nav-item p-header__nav-item__mypage">
                             <a href="{{ route('takeout.mypage') }}">マイページ</a>
                         </li>
-                        {{-- ログアウトのここ直して！！！！！ --}}
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                            @csrf
-                            <li class="c-button p-header__nav-item p-header__nav-item__logout">
-                                <a href="">ログアウト</a>
-                            </li>
-                        </form>
-                        
+                        <li class="c-button p-header__nav-item p-header__nav-item__logout">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    ログアウト
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                        </li>
                     @endguest
                 </ul>
             </nav>
