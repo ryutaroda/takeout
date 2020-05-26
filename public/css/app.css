@@ -533,7 +533,7 @@ form
 .p-form__photoUp--text {
   position: relative;
   bottom: 90px;
-  left: 75px;
+  text-align: center;
 }
 
 .p-form__submit {

@@ -18,7 +18,6 @@
           </select>
           <button class="c-button p-search__btn">検索</button>
         </div>
-        
       </form>
     </section>
     <!-- shopList -->
