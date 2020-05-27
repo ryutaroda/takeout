@@ -6,7 +6,11 @@
       <button class="submit-btn" type="submit" @click.prevent="addTask">TODOを追加</button>
     </form>
     <ul>
-      <li v-for="todo in todos" :key="todo.message">{{ todo.text }}</li>
+      <li v-for="(todo, index) in todos" :key="todo.message">
+        <span>{{ todo.text }}</span>
+        <input type="text" v-model="todo.text" />
+        <button @click="remove(index)">削除</button>
+      </li>
     </ul>
   </div>
 </template>
@@ -24,10 +28,14 @@ export default {
   },
   methods: {
     addTask() {
+      if (this.task === "") return;
       this.todos.push({
         text: this.task
       });
       this.task = "";
+    },
+    remove(index) {
+      this.todos.splice(index, 1);
     }
   }
 };

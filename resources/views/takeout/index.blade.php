@@ -3,6 +3,7 @@
 @section('title','店舗一覧')
 
 @section('content')
+<example-component></example-component>
 <main class="l-main l-main__bg">
     <!-- search -->
     <section class="p-search u-wrap">

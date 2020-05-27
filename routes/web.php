@@ -31,4 +31,4 @@ Route::get('/takeout/detail', 'RegisterController@detail')->name('takeout.detail
 // メニュー登録
 Route::post('/takeout/addMenu', 'RegisterController@add')->name('takeout.add');
 // メニュー削除
-// Route::post('/takeout/update', 'RegisterController@update')->name('takeouto.update');
+Route::post('/takeout/delete/{id}', 'RegisterController@delete')->name('takeout.delete');

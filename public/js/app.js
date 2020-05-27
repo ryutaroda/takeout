@@ -1921,6 +1921,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Component mounted.");
@@ -1937,10 +1941,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addTask: function addTask() {
+      if (this.task === "") return;
       this.todos.push({
         text: this.task
       });
       this.task = "";
+    },
+    remove: function remove(index) {
+      this.todos.splice(index, 1);
     }
   }
 });
@@ -37543,8 +37551,43 @@ var render = function() {
     _vm._v(" "),
     _c(
       "ul",
-      _vm._l(_vm.todos, function(todo) {
-        return _c("li", { key: todo.message }, [_vm._v(_vm._s(todo.text))])
+      _vm._l(_vm.todos, function(todo, index) {
+        return _c("li", { key: todo.message }, [
+          _c("span", [_vm._v(_vm._s(todo.text))]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: todo.text,
+                expression: "todo.text"
+              }
+            ],
+            attrs: { type: "text" },
+            domProps: { value: todo.text },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(todo, "text", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              on: {
+                click: function($event) {
+                  return _vm.remove(index)
+                }
+              }
+            },
+            [_vm._v("削除")]
+          )
+        ])
       }),
       0
     )

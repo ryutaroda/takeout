@@ -16,7 +16,9 @@ class RegisterController extends Controller
     // マイページ（店舗側）
     public function mypage()
     {
-        return view('takeout.mypage');
+        // 登録したメニューのデータを取得
+        $products = Product::all();
+        return view('takeout.mypage', compact('products'));
     }
     // 店舗情報編集（店舗側）
     public function edit()
@@ -33,7 +35,7 @@ class RegisterController extends Controller
     {
         return view('takeout.shopDetail');
     }
-    // メニュー登録
+    // メニュー・商品登録
     public function add(Request $request)
     {
         $this->validate($request, [
@@ -42,11 +44,18 @@ class RegisterController extends Controller
             'price' => 'required|integer|max:10000',
         ]);
 
-        $product = new Product();
-        $file_name = time() . '.' . $request->file('pic')->getClientOriginalName();
+        $products = new Product();
+        $file_name = $request->file('pic');
         $request->file('pic')->storeAs('public', $file_name);
-        $product->pic = 'storage/' . $file_name;
-        Auth::user()->products()->save($product->fill($request->all()));
+        $products->pic = 'storage/' . $file_name;
+        Auth::user()->products()->save($products->fill($request->all()));
+        return redirect('/takeout/mypage');
+    }
+    // メニュー・商品削除
+    public function delete($id)
+    {
+        // Product::find($request->id)->delete();
+        Auth::user()->products()->find($id)->delete();
         return redirect('/takeout/mypage');
     }
 }
