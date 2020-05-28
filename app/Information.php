@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Information extends Model
 {
-    protected $fillable = ['user_id', 'address', 'addr_detail', 'tell', 'open_hours', 'pic'];
+    protected $table = 'informations';
+
+    protected $fillable = ['address', 'addr_detail', 'tell', 'open_hours', 'pic', 'user_id'];
+
+    // protected $fillable = ['name'];
+
 
     public function user()
     {
-        return $this->belongsTo('App\User', 'user_id', 'id', 'users');
+        return $this->belongsTo('App\User');
     }
 }

@@ -32,7 +32,6 @@
                     type="file"
                     name="pic"
                     class="p-form__photoUp"
-                    placeholder="store name"
                 />
                 <p class="p-form__photoUp--text">写真を追加</p>
             </label>

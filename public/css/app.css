@@ -301,6 +301,8 @@ list
   height: 200px;
   background: #e6e6e6;
   border-radius: 5px 5px 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* ---------------------------------
@@ -387,6 +389,11 @@ product
   border-radius: 5px 5px 0 0;
 }
 
+.p-product__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .p-product__info {
   padding: 10px;
   font-size: 12px;
@@ -424,6 +431,12 @@ info (mypage)
   float: left;
   margin-left: 20px;
   background: #e6e6e6;
+  border-radius: 5px;
+}
+
+.p-infoContent .p-shopInfo__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 5px;
 }
 

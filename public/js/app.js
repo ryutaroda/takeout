@@ -1925,31 +1925,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Component mounted.");
   },
   data: function data() {
     return {
-      task: "ここにかく",
+      task: "",
       todos: [{
+        id: 1,
         text: "aaaaa"
       }, {
+        id: 2,
         text: "ssssss"
-      }]
+      }],
+      //   editedTodo: null,
+      show: true,
+      editIndex: -1
     };
   },
+  computed: {
+    changeButtonText: function changeButtonText() {
+      return this.editIndex === -1 ? "追加" : "編集";
+    }
+  },
   methods: {
+    // タスク追加
     addTask: function addTask() {
       if (this.task === "") return;
       this.todos.push({
+        // id: this.id,
         text: this.task
       });
       this.task = "";
     },
+    // 削除
     remove: function remove(index) {
       this.todos.splice(index, 1);
-    }
+    },
+    edit: function edit(index) {
+      this.task = this.todos(index);
+    } // 編集モードに切り替え
+    // editTodo(index){ },
+    // editDone(indedx){}
+
   }
 });
 
@@ -37518,7 +37542,7 @@ var render = function() {
               expression: "task"
             }
           ],
-          attrs: { type: "text" },
+          attrs: { type: "text", placeholder: "ここに書く" },
           domProps: { value: _vm.task },
           on: {
             input: function($event) {
@@ -37529,8 +37553,6 @@ var render = function() {
             }
           }
         }),
-        _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.task))]),
         _vm._v(" "),
         _c(
           "button",
@@ -37544,7 +37566,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("TODOを追加")]
+          [_vm._v("@" + _vm._s(_vm.changeButtonText))]
         )
       ]
     ),
@@ -37552,29 +37574,20 @@ var render = function() {
     _c(
       "ul",
       _vm._l(_vm.todos, function(todo, index) {
-        return _c("li", { key: todo.message }, [
+        return _c("li", { key: todo.id }, [
           _c("span", [_vm._v(_vm._s(todo.text))]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: todo.text,
-                expression: "todo.text"
-              }
-            ],
-            attrs: { type: "text" },
-            domProps: { value: todo.text },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          _c(
+            "button",
+            {
+              on: {
+                click: function($event) {
+                  return _vm.edit(index)
                 }
-                _vm.$set(todo, "text", $event.target.value)
               }
-            }
-          }),
+            },
+            [_vm._v("編集")]
+          ),
           _vm._v(" "),
           _c(
             "button",

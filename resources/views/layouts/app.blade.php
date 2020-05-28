@@ -26,7 +26,7 @@
         <header class="l-header">
             <div class="p-header u-wrap">
             <!-- title -->
-            <h1 class="p-header__title"><a href="{{ url('/') }}">Take Out</a></h1>
+            <h1 class="p-header__title"><a href="{{ url('/takeout') }}">Take Out</a></h1>
             <!-- headerNav -->
             <nav class="p-header__nav">
                 <ul class="p-header__nav-list">

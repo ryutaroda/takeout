@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/takeout', function () {
     return view('takeout.index');
 });
 
@@ -25,9 +25,9 @@ Route::get('/takeout/edit', 'RegisterController@edit')->name('takeout.edit');
 // メニュー追加ページ（店舗側）
 Route::get('/takeout/new', 'RegisterController@new')->name('takeout.new');
 // 店舗詳細ページ（閲覧者用）
-Route::get('/takeout/detail', 'RegisterController@detail')->name('takeout.detail');
+Route::get('/takeout/detail/{id}', 'RegisterController@detail')->name('takeout.detail');
 // 店舗情報・編集・更新
-// Route::post('/takeout/update', 'RegisterController@update')->name('takeouto.update');
+Route::post('/takeout/regist', 'RegisterController@regist')->name('takeout.regist');
 // メニュー登録
 Route::post('/takeout/addMenu', 'RegisterController@add')->name('takeout.add');
 // メニュー削除
