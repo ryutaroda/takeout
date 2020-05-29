@@ -17,6 +17,7 @@ class CreateInformationsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('category');
             $table->string('address');
             $table->string('addr_detail');
             $table->string('tell');

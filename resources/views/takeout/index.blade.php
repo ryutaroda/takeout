@@ -31,11 +31,11 @@
       @foreach ($users as $user)
       <div class="p-shop">
         <div class="p-shop__img">
-          <a href=""><img src="/storage/{{ $user->information->pic}}" alt="" /></a>
+          <a href="{{ route('takeout.detail', $user->id ) }}"><img src="/storage/{{ $user->information->pic}}" alt="" /></a>
         </div>
         <div class="p-shop__info">
-        <h3 class="p-shop__name"><a href="">{{ $user->name }}</a></h3>
-          <span class="p-shop__category">ジャンル/ハンバーグ</span>
+        <h3 class="p-shop__name"><a href="{{ route('takeout') }}">{{ $user->name }}</a></h3>
+          <span class="p-shop__category">ジャンル/ {{ $user->information->category }}</span>
           <div class="p-shop__time-container">
             <p class="p-shop__time-text">■テイクアウト営業時間</p>
             <span class="p-shop__time-num">{{ $user->information->open_hours }}</span>

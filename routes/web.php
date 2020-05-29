@@ -18,6 +18,8 @@ Route::get('/takeout', function () {
 Auth::routes();
 // 店舗一覧ページ（どちらも）
 Route::get('/takeout', 'RegisterController@index')->name('takeout');
+// 店舗一覧ページ カテゴリーで絞り込み
+Route::get('/takeout/search', 'RegisterController@search')->name('takeout.search');
 // マイページ（店舗側）
 Route::get('/takeout/mypage', 'RegisterController@mypage')->name('takeout.mypage');
 // 店舗情報編集ページ（店舗側）
@@ -26,8 +28,10 @@ Route::get('/takeout/edit', 'RegisterController@edit')->name('takeout.edit');
 Route::get('/takeout/new', 'RegisterController@new')->name('takeout.new');
 // 店舗詳細ページ（閲覧者用）
 Route::get('/takeout/detail/{id}', 'RegisterController@detail')->name('takeout.detail');
-// 店舗情報・編集・更新
+// 店舗情報・編集
 Route::post('/takeout/regist', 'RegisterController@regist')->name('takeout.regist');
+// 店舗情報・更新
+Route::post('/takeout/update', 'RegisterController@update')->name('takeout.update');
 // メニュー登録
 Route::post('/takeout/addMenu', 'RegisterController@add')->name('takeout.add');
 // メニュー削除

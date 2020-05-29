@@ -16,6 +16,11 @@
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
+            @error('category')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
             @error('open_hours')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -44,6 +49,13 @@
                 class="p-form__photoUp"
             />
             <p class="p-form__photoUp--text">お店の写真を追加</p>
+        </label>
+        <label class="p-form__label">
+            <select name="category" class="p-form__input">
+            @foreach(config('foodcategory') as $key => $score)
+                <option value="{{ $score }}">{{ $score }}</option>
+            @endforeach
+            </select>
         </label>
         {{-- <label class="p-form__label">
             <input type="text" class="p-form__input" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="店名" />

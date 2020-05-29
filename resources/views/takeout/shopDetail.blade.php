@@ -8,111 +8,39 @@
     <!-- infor -->
     <section class="p-infoContent">
         <div class="p-info">
-            <div class="p-info__time">営業時間<span>(00:00~00:00)</span></div>
-            <h2 class="p-info__shop-name"><span>モスバーガー</span></h2>
+            <div class="p-info__time">営業時間<span>{{ $user->information->open_hours }}</span></div>
+        <h2 class="p-info__shop-name"><span>{{ $user->name }}</span></h2>
             <div class="p-info__category">ハンバーガー</div>
-            <div class="p-info__addr">住所</div>
+        <div class="p-info__addr">{{ $user->information->address }}{{ $user->information->addr_detail }}</div>
             <div class="p-info__tell">
                 <p class="p-info__tell-text">予約の電話番号</p>
-                <span class="p-info__tell-num">000-0000-0000</span>
+                <span class="p-info__tell-num">{{ $user->information->tell }}</span>
             </div>
         </div>
         <div class="p-shopInfo__img">
-            <a href=""><img src="" alt="" /></a>
+            <a href=""><img src="/storage/{{ $user->information->pic}}" alt="" /></a>
         </div>
     </section>
     <!-- productsList -->
     <section class="p-productList">
-      <div class="p-productList__title">メニュー</div>
-      <!-- product -->
-      <div class="p-product">
-        <div class="p-product__img">
-          <a href=""><img src="" alt="" /></a>
+        <div class="p-productList__title">メニュー</div>
+        <!-- product -->
+        <div>
+        @foreach ($products as $product)
+        <div class="p-product">
+            <div class="p-product__img">
+                <img src="/storage/{{ $product->pic}}">
+                {{-- <a href=""><img src="" alt="" /></a> --}}
+            </div>
+            <div class="p-product__info">
+                <h3 class="p-product__name">{{ $product->name }}</h3>
+                <div class="p-product__price">
+                    <span class="">{{ $product->price }}円</span>
+                </div>
+            </div>
         </div>
-        <div class="p-product__info">
-          <h3 class="p-product__name"><a href="">ライスバーガー</a></h3>
-          <div class="p-product__price">
-            <span class="">600円</span>
-          </div>
+        @endforeach
         </div>
-      </div>
-      <div class="p-product">
-        <div class="p-product__img">
-          <a href=""><img src="" alt="" /></a>
-        </div>
-        <div class="p-product__info">
-          <h3 class="p-product__name"><a href="">ライスバーガー</a></h3>
-          <div class="p-product__price">
-            <span class="">600円</span>
-          </div>
-        </div>
-      </div>
-      <div class="p-product">
-        <div class="p-product__img">
-          <a href=""><img src="" alt="" /></a>
-        </div>
-        <div class="p-product__info">
-          <h3 class="p-product__name"><a href="">ライスバーガー</a></h3>
-          <div class="p-product__price">
-            <span class="">600円</span>
-          </div>
-        </div>
-      </div>
-      <div class="p-product">
-        <div class="p-product__img">
-          <a href=""><img src="" alt="" /></a>
-        </div>
-        <div class="p-product__info">
-          <h3 class="p-product__name"><a href="">ライスバーガー</a></h3>
-          <div class="p-product__price">
-            <span class="">600円</span>
-          </div>
-        </div>
-      </div>
-      <div class="p-product">
-        <div class="p-product__img">
-          <a href=""><img src="" alt="" /></a>
-        </div>
-        <div class="p-product__info">
-          <h3 class="p-product__name"><a href="">ライスバーガー</a></h3>
-          <div class="p-product__price">
-            <span class="">600円</span>
-          </div>
-        </div>
-      </div>
-      <div class="p-product">
-        <div class="p-product__img">
-          <a href=""><img src="" alt="" /></a>
-        </div>
-        <div class="p-product__info">
-          <h3 class="p-product__name"><a href="">ライスバーガー</a></h3>
-          <div class="p-product__price">
-            <span class="">600円</span>
-          </div>
-        </div>
-      </div>
-      <div class="p-product">
-        <div class="p-product__img">
-          <a href=""><img src="" alt="" /></a>
-        </div>
-        <div class="p-product__info">
-          <h3 class="p-product__name"><a href="">ライスバーガー</a></h3>
-          <div class="p-product__price">
-            <span class="">600円</span>
-          </div>
-        </div>
-      </div>
-      <div class="p-product">
-        <div class="p-product__img">
-          <a href=""><img src="" alt="" /></a>
-        </div>
-        <div class="p-product__info">
-          <h3 class="p-product__name"><a href="">ライスバーガー</a></h3>
-          <div class="p-product__price">
-            <span class="">600円</span>
-          </div>
-        </div>
-      </div>
     </section>
-  </main>
+</main>
 @endsection
