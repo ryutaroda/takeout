@@ -3,7 +3,7 @@
     <form v-on:submit.prevent>
       <input type="text" v-model="task" placeholder="ここに書く" />
       <!-- <p>{{ task }}</p> -->
-      <button class="submit-btn" type="submit" @click.prevent="addTask">@{{changeButtonText}}</button>
+      <button class="submit-btn" type="submit" @click.prevent="addTask">{{changeButtonText}}</button>
     </form>
     <ul>
       <li v-for="(todo, index) in todos" v-bind:key="todo.id" :class>

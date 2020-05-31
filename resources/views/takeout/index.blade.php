@@ -4,7 +4,8 @@
 
 @section('content')
 {{-- <example-component></example-component> --}}
-<main class="l-main l-main__bg">
+<shop-list v-bind:users="{{ $users }}"></shop-list>
+{{-- <main class="l-main l-main__bg">
     <!-- search -->
     <section class="p-search u-wrap">
       <p class="p-search__text">テイクアウトできるお店を探そう！！</p>
@@ -35,7 +36,7 @@
         </div>
         <div class="p-shop__info">
         <h3 class="p-shop__name"><a href="{{ route('takeout') }}">{{ $user->name }}</a></h3>
-          <span class="p-shop__category">ジャンル/ {{ $user->information->category }}</span>
+          <span class="p-shop__category">{{ $user->information->category }}/ {{ $user->information->address }}</span>
           <div class="p-shop__time-container">
             <p class="p-shop__time-text">■テイクアウト営業時間</p>
             <span class="p-shop__time-num">{{ $user->information->open_hours }}</span>
@@ -44,5 +45,5 @@
       </div>
       @endforeach
     </section>
-</main>
+</main> --}}
 @endsection

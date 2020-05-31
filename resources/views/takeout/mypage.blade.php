@@ -16,7 +16,7 @@
                 <p class="p-info__tell-text">予約の電話番号</p>
                 <span class="p-info__tell-num">{{ $user->information->tell }}</span>
             </div>
-            <div class="p-info__edit c-button"><a href="{{ route('takeout.edit') }}">情報編集</a></div>
+            <div class="p-info__edit c-button"><a href="{{ route('takeout.editInfo',$user->information->id) }}">情報編集</a></div>
         </div>
         <div class="p-shopInfo__img">
             <a href=""><img src="/storage/{{ $user->information->pic}}" alt="" /></a>

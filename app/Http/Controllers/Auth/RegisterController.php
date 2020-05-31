@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/takeout/edit';
+    protected $redirectTo = '/takeout/newInfo';
 
     /**
      * Create a new controller instance.

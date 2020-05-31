@@ -1979,6 +1979,281 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ShopList.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ShopList.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      users: [],
+      categories: [{
+        id: 1,
+        name: "餃子"
+      }, {
+        id: 2,
+        name: "ハンバーガー"
+      }, {
+        id: 3,
+        name: "ピザ"
+      }, {
+        id: 4,
+        name: "丼もの"
+      }, {
+        id: 5,
+        name: "弁当"
+      }, {
+        id: 6,
+        name: "焼き鳥"
+      }, {
+        id: 7,
+        name: "洋食"
+      }, {
+        id: 8,
+        name: "寿司"
+      }, {
+        id: 9,
+        name: "とんかつ"
+      }, {
+        id: 10,
+        name: "和食"
+      }, {
+        id: 11,
+        name: "お好み焼き"
+      }, {
+        id: 12,
+        name: "カフェ"
+      }, {
+        id: 13,
+        name: "スイーツ"
+      }, {
+        id: 14,
+        name: "カレー"
+      }],
+      category: "",
+      prefectures: [{
+        id: 1,
+        name: "北海道"
+      }, {
+        id: 2,
+        name: "青森県"
+      }, {
+        id: 3,
+        name: "岩手県"
+      }, {
+        id: 4,
+        name: "宮城県"
+      }, {
+        id: 5,
+        name: "秋田県"
+      }, {
+        id: 6,
+        name: "山形県"
+      }, {
+        id: 7,
+        name: "福島県"
+      }, {
+        id: 8,
+        name: "茨城県"
+      }, {
+        id: 9,
+        name: "栃木県"
+      }, {
+        id: 10,
+        name: "群馬県"
+      }, {
+        id: 11,
+        name: "埼玉県"
+      }, {
+        id: 12,
+        name: "千葉県"
+      }, {
+        id: 13,
+        name: "東京都"
+      }, {
+        id: 14,
+        name: "神奈川県"
+      }, {
+        id: 15,
+        name: "新潟県"
+      }, {
+        id: 16,
+        name: "富山県"
+      }, {
+        id: 17,
+        name: "石川県"
+      }, {
+        id: 18,
+        name: "福井県"
+      }, {
+        id: 19,
+        name: "山梨県"
+      }, {
+        id: 20,
+        name: "長野県"
+      }, {
+        id: 21,
+        name: "岐阜県"
+      }, {
+        id: 22,
+        name: "静岡県"
+      }, {
+        id: 23,
+        name: "愛知県"
+      }, {
+        id: 24,
+        name: "三重県"
+      }, {
+        id: 25,
+        name: "滋賀県"
+      }, {
+        id: 26,
+        name: "京都府"
+      }, {
+        id: 27,
+        name: "大阪府"
+      }, {
+        id: 28,
+        name: "兵庫県"
+      }, {
+        id: 29,
+        name: "奈良県"
+      }, {
+        id: 30,
+        name: "和歌山県"
+      }, {
+        id: 31,
+        name: "鳥取県"
+      }, {
+        id: 32,
+        name: "島根県"
+      }, {
+        id: 33,
+        name: "岡山県"
+      }, {
+        id: 34,
+        name: "広島県"
+      }, {
+        id: 35,
+        name: "山口県"
+      }, {
+        id: 36,
+        name: "徳島県"
+      }, {
+        id: 37,
+        name: "香川県"
+      }, {
+        id: 38,
+        name: "愛媛県"
+      }, {
+        id: 39,
+        name: "高知県"
+      }, {
+        id: 40,
+        name: "福岡県"
+      }, {
+        id: 41,
+        name: "佐賀県"
+      }, {
+        id: 42,
+        name: "長崎県"
+      }, {
+        id: 43,
+        name: "熊本県"
+      }, {
+        id: 44,
+        name: "大分県"
+      }, {
+        id: 45,
+        name: "宮崎県"
+      }, {
+        id: 46,
+        name: "鹿児島県"
+      }, {
+        id: 47,
+        name: "沖縄県"
+      }],
+      prefecture: ""
+    };
+  },
+  props: {
+    users: []
+  },
+  computed: {
+    searchShops: function searchShops() {
+      var _this = this;
+
+      var list = this.users.slice(); // ジャンルを選択した時
+
+      if (this.category) {
+        list = list.filter(function (e) {
+          return e.category === _this.category;
+        });
+      } // 都道府県を選択した時
+
+
+      if (this.prefecture) {
+        list = list.filter(function (e) {
+          return e.address === _this.prefecture;
+        });
+      }
+
+      return list;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -37566,7 +37841,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("@" + _vm._s(_vm.changeButtonText))]
+          [_vm._v(_vm._s(_vm.changeButtonText))]
         )
       ]
     ),
@@ -37600,6 +37875,157 @@ var render = function() {
             },
             [_vm._v("削除")]
           )
+        ])
+      }),
+      0
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ShopList.vue?vue&type=template&id=29bd301f&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ShopList.vue?vue&type=template&id=29bd301f& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("main", { staticClass: "l-main l-main__bg" }, [
+    _c("section", { staticClass: "p-search u-wrap" }, [
+      _c("p", { staticClass: "p-search__text" }, [
+        _vm._v("テイクアウトできるお店を探そう！！")
+      ]),
+      _vm._v(" "),
+      _c("form", { attrs: { method: "GET", action: "" } }, [
+        _c("div", { staticClass: "p-search__content" }, [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.category,
+                  expression: "category"
+                }
+              ],
+              staticClass: "p-search__select",
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.category = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "" } }, [_vm._v("ジャンル")]),
+              _vm._v(" "),
+              _vm._l(_vm.categories, function(category) {
+                return _c("option", { domProps: { value: category.name } }, [
+                  _vm._v(_vm._s(category.name))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.prefecture,
+                  expression: "prefecture"
+                }
+              ],
+              staticClass: "p-search__select",
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.prefecture = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "" } }, [_vm._v("都道府県")]),
+              _vm._v(" "),
+              _vm._l(_vm.prefectures, function(prefecture) {
+                return _c("option", { domProps: { value: prefecture.name } }, [
+                  _vm._v(_vm._s(prefecture.name))
+                ])
+              })
+            ],
+            2
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "section",
+      { staticClass: "p-shopList u-wrap" },
+      _vm._l(_vm.searchShops, function(user) {
+        return _c("div", { staticClass: "p-shop" }, [
+          _c("div", { staticClass: "p-shop__img" }, [
+            _c("a", { attrs: { href: "/takeout/detail/" + user.id } }, [
+              _c("img", { attrs: { src: "/storage/" + user.pic, alt: "" } })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "p-shop__info" }, [
+            _c("h3", { staticClass: "p-shop__name" }, [
+              _c("a", { attrs: { href: "/takeout/detail/" + user.id } }, [
+                _vm._v(_vm._s(user.name))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "p-shop__category" }, [
+              _vm._v(_vm._s(user.category) + "\b/ " + _vm._s(user.address))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-shop__time-container" }, [
+              _c("p", { staticClass: "p-shop__time-text" }, [
+                _vm._v("■テイクアウト営業時間")
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "p-shop__time-num" }, [
+                _vm._v(_vm._s(user.open_hours))
+              ])
+            ])
+          ])
         ])
       }),
       0
@@ -49800,7 +50226,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component("example-component", __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component("shop-list", __webpack_require__(/*! ./components/ShopList.vue */ "./resources/js/components/ShopList.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -49808,7 +50235,7 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
+  el: "#app"
 });
 
 /***/ }),
@@ -49922,6 +50349,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ShopList.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/ShopList.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ShopList_vue_vue_type_template_id_29bd301f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ShopList.vue?vue&type=template&id=29bd301f& */ "./resources/js/components/ShopList.vue?vue&type=template&id=29bd301f&");
+/* harmony import */ var _ShopList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShopList.vue?vue&type=script&lang=js& */ "./resources/js/components/ShopList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ShopList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ShopList_vue_vue_type_template_id_29bd301f___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ShopList_vue_vue_type_template_id_29bd301f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ShopList.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ShopList.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/ShopList.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ShopList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ShopList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ShopList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ShopList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ShopList.vue?vue&type=template&id=29bd301f&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/ShopList.vue?vue&type=template&id=29bd301f& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShopList_vue_vue_type_template_id_29bd301f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ShopList.vue?vue&type=template&id=29bd301f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ShopList.vue?vue&type=template&id=29bd301f&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShopList_vue_vue_type_template_id_29bd301f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShopList_vue_vue_type_template_id_29bd301f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
